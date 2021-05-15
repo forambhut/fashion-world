@@ -1,0 +1,128 @@
+<html>
+<head><style>
+body
+{
+ text-align:center;
+ width:100%;
+ margin:0 auto;
+ padding:0px;
+ font-family: "Myriad Pro","Helvetica Neue",Helvetica,Arial,Sans-Serif;
+ background-color:cyan;
+}
+#wrapper {
+ margin:0 auto;
+ padding:0px;
+ text-align:center;
+ width:995px;
+}
+#register_div {
+ display:none;
+}
+section
+{
+background-color:white;
+ width:300px;
+ box-sizing:border-box;
+ margin:10px;
+ margin-left:347px;
+ padding-bottom:10px;
+ box-shadow:0px 0px 10px 0px #122A0A;
+}
+#wrapper section h1
+{
+ color:#21610B;
+ font-size:30px;
+ margin:0px;
+ background-color:rgb(170,235,226);
+ height:60px;
+ line-height:65px;
+}
+section input[type="text"]
+{
+ width:220px;
+ height:40px;
+ padding-left:5px;
+ font-size:15px;
+}
+section input[type="email"]
+{
+ width:220px;
+ height:40px;
+ padding-left:5px;
+ font-size:15px;
+}
+
+section input[type="password"]
+{
+ width:220px;
+ height:40px;
+ padding-left:5px;
+ font-size:15px;
+}
+section input[type="submit"]
+{
+ width:220px;
+ height:40px;
+ background-color:rgb(16,119,122);
+ border:none;
+ color:white;
+ font-weight:bold;
+}
+section .change_link
+{
+ color:#21610B;
+}
+section .change_link input[type="button"]
+{
+ background:none;
+ border:none;
+ text-decoration:underline;
+ color:#2E64FE;
+ font-size:15px;
+ cursor:pointer;
+}
+</style>
+<script type="text/javascript" src="jquery-3.4.1.js"></script>
+<script type="text/javascript">
+function show_signup()
+{
+ $("#login_div").fadeOut('fast', function() {
+  $("#register_div").fadeIn();
+ });
+}
+function show_login()
+{
+ $("#register_div").fadeOut('fast', function() {
+  $("#login_div").fadeIn();
+ });
+}
+</script>
+</head>
+<body>
+<div id="wrapper">
+
+<section id="login_div">
+ <form  action="" autocomplete="on">
+  <h1>LOG IN</h1>
+  <p><input name="username" required="required" type="email" placeholder="Enter Your Email"/></p>
+  <p><input name="password" required="required" type="password" placeholder="************" /></p>
+  <p><input type="submit" value="DO LOGIN"/></p>
+  <p class="change_link">Not a member yet ?<input type="button" onclick="show_signup();" value="Join us"></p>
+ </form>
+</section>
+
+<section id="register_div">
+ <form action="" autocomplete="on">
+  <h1>SIGN UP</h1>
+  <p><input name="username" required="required" type="text" placeholder="Enter Your Name"/></p>
+  <p><input name="email" required="required" type="email" placeholder="Enter Your Email"/></p>
+  <p><input name="password" required="required" type="password" placeholder="*********"/></p>
+ 
+ <p><input name="password_confirm" required="required" type="password" placeholder="*********"/></p>
+  <p><input type="submit" value="DO SIGN UP"/></p>
+  <p class="change_link">Already a member ?<input type="button" onclick="show_login();" value="Log in"></p>
+ </form>
+</section>
+</div>
+</body>
+</html>
